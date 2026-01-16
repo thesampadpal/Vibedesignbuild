@@ -8,6 +8,7 @@ import {
   GeneratedLandingPage,
   ThemeConfig,
 } from "@/lib/types";
+import { trackEvent } from "@/components/providers/PostHogProvider";
 import {
   Hero,
   Benefits,
@@ -69,6 +70,11 @@ export default function PreviewPage() {
       }
 
       setLandingPage(result.landingPage);
+      trackEvent("page_generated", {
+        sessionId,
+        template: theme.template,
+        accentColor: theme.accentColor,
+      });
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
@@ -97,6 +103,7 @@ export default function PreviewPage() {
 
       setExportedCode(result.html);
       setViewMode("code");
+      trackEvent("code_exported", { sessionId });
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
@@ -109,6 +116,7 @@ export default function PreviewPage() {
     await navigator.clipboard.writeText(exportedCode);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+    trackEvent("code_copied", { sessionId });
   };
 
   const downloadCode = () => {
@@ -121,6 +129,7 @@ export default function PreviewPage() {
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+    trackEvent("code_downloaded", { sessionId });
     URL.revokeObjectURL(url);
   };
 

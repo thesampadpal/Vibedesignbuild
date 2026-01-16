@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { InterviewMessage, ExtractedProductData } from "@/lib/types";
+import { trackEvent } from "@/components/providers/PostHogProvider";
 import MessageBubble from "./MessageBubble";
 import TypingIndicator from "./TypingIndicator";
 
@@ -65,6 +66,7 @@ export default function InterviewChat({
 
       setSessionId(data.sessionId);
       setMessages([{ role: "assistant", content: data.message }]);
+      trackEvent("interview_started", { sessionId: data.sessionId });
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
@@ -101,6 +103,13 @@ export default function InterviewChat({
       ]);
 
       if (data.isComplete && data.extractedData) {
+        // Track interview completion
+        trackEvent("interview_completed", {
+          sessionId: data.sessionId,
+          productName: data.extractedData.productName,
+          questionCount: messages.length + 2, // +2 for this exchange
+        });
+
         // Interview complete, redirect to preview
         setTimeout(() => {
           if (onComplete) {

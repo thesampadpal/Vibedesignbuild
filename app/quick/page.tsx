@@ -5,6 +5,7 @@ import Link from "next/link";
 import InputForm from "@/components/InputForm";
 import CopyOutput from "@/components/CopyOutput";
 import { GeneratedCopy, Tone } from "@/lib/types";
+import { trackEvent } from "@/components/providers/PostHogProvider";
 
 export default function QuickMode() {
   const [generatedCopy, setGeneratedCopy] = useState<GeneratedCopy | null>(
@@ -36,6 +37,7 @@ export default function QuickMode() {
       }
 
       setGeneratedCopy(data);
+      trackEvent("quick_copy_generated", { tone });
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
