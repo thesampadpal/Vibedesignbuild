@@ -1,5 +1,32 @@
 import { ExtractedProductData, Tone } from "./types";
 
+export const URL_ANALYSIS_PROMPT = `You are analyzing a webpage to extract product information for generating a landing page.
+
+Given the webpage content below, extract:
+1. productName - The name of the product/service/project
+2. description - What it does in 1-2 sentences (clear and specific)
+3. targetAudience - Who is this for? Be specific about the type of person/role
+4. keyBenefit - The main outcome/value users get from using this
+5. problem - What pain/problem does this solve? What's the "before" state?
+
+Guidelines:
+- Be specific, not generic. "Developers" is too broad. "Solo developers building SaaS" is better.
+- For GitHub repos, focus on the README content and what the project actually does
+- If information isn't explicit, make reasonable inferences based on context
+- If something truly can't be determined, leave it as an empty string
+
+Return ONLY valid JSON (no markdown, no explanation):
+{
+  "productName": "...",
+  "description": "...",
+  "targetAudience": "...",
+  "keyBenefit": "...",
+  "problem": "..."
+}
+
+WEBPAGE CONTENT:
+{content}`;
+
 export const INTERVIEW_SYSTEM_PROMPT = `You are conducting an interview to gather information for generating a high-converting landing page. Your goal is to extract:
 
 1. What the product does (clear, specific)
