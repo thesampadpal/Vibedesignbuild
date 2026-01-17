@@ -29,15 +29,15 @@ export default function Home() {
             </span>
           </div>
 
-          <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Landing pages that
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            Your landing page is
             <br />
-            <span className="text-accent">actually convert</span>
+            <span className="text-accent">costing you customers</span>
           </h1>
 
           <p className="text-xl text-zinc-400 max-w-xl mx-auto mb-10">
-            Stop spending hours on CSS. Answer a few questions, get a landing
-            page with copy that sells and design that doesn&apos;t embarrass you.
+            You can build anything. But your landing page still looks like an MVP.
+            <span className="text-zinc-300"> Paste your URL, get a page with copy that converts.</span>
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -45,7 +45,7 @@ export default function Home() {
               href="/create"
               className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-zinc-900 font-semibold rounded-xl hover:bg-accent-hover transition-colors"
             >
-              Build Your Landing Page
+              Create Your Landing Page
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -61,69 +61,63 @@ export default function Home() {
                 <path d="m12 5 7 7-7 7" />
               </svg>
             </Link>
-            <Link
-              href="/quick"
-              className="inline-flex items-center gap-2 px-6 py-4 text-zinc-400 hover:text-white transition-colors"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
-              </svg>
-              Just need copy? Quick mode
-            </Link>
+            <span className="text-zinc-600 text-sm">Free. No signup.</span>
           </div>
         </header>
 
-        {/* How it works */}
+        {/* Problem Section */}
         <section className="mb-20 animate-fade-in-delay-1">
+          <div className="bg-zinc-900/30 border border-zinc-800/50 rounded-2xl p-8 md:p-10">
+            <p className="text-zinc-400 text-lg leading-relaxed">
+              You spent <span className="text-white">6 hours tweaking CSS</span> and it still looks off.
+              You&apos;re embarrassed to share the link.
+              You tell people <span className="text-white">&quot;ignore the design, it&apos;s just an MVP&quot;</span> —
+              but visitors don&apos;t know that. They bounce.
+            </p>
+          </div>
+        </section>
+
+        {/* How it works */}
+        <section className="mb-20 animate-fade-in-delay-2">
           <h2 className="text-xs font-medium text-zinc-600 uppercase tracking-widest text-center mb-10">
-            How it works
+            60 seconds, start to finish
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center mx-auto mb-4">
                 <span className="text-accent font-bold">1</span>
               </div>
-              <h3 className="font-semibold text-white mb-2">Answer questions</h3>
+              <h3 className="font-semibold text-white mb-2">Paste or describe</h3>
               <p className="text-zinc-500 text-sm">
-                Tell us about your product, audience, and what makes you different.
+                Drop your website URL, GitHub repo, or just describe what you&apos;re building.
               </p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center mx-auto mb-4">
                 <span className="text-accent font-bold">2</span>
               </div>
-              <h3 className="font-semibold text-white mb-2">Get your page</h3>
+              <h3 className="font-semibold text-white mb-2">Get conversion copy</h3>
               <p className="text-zinc-500 text-sm">
-                We generate copy that converts and inject it into a clean template.
+                We write copy focused on turning visitors into customers. Not generic AI fluff.
               </p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center mx-auto mb-4">
                 <span className="text-accent font-bold">3</span>
               </div>
-              <h3 className="font-semibold text-white mb-2">Deploy anywhere</h3>
+              <h3 className="font-semibold text-white mb-2">Export and ship</h3>
               <p className="text-zinc-500 text-sm">
-                Download the code. Drop it on Vercel, Netlify, or anywhere else.
+                Download clean HTML. Deploy to Vercel, Netlify, anywhere. Done.
               </p>
             </div>
           </div>
         </section>
 
         {/* Benefits */}
-        <section className="mb-20 animate-fade-in-delay-2">
+        <section className="mb-20 animate-fade-in-delay-3">
           <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 md:p-12">
             <h2 className="font-display text-2xl font-bold text-white mb-8">
-              Built for founders who ship
+              Why this works
             </h2>
             <div className="space-y-6">
               <div className="flex gap-4">
@@ -145,11 +139,10 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-medium text-white mb-1">
-                    Copy that sounds human
+                    Conversion-focused, not generic
                   </h3>
                   <p className="text-zinc-500 text-sm">
-                    No &quot;revolutionize&quot; or &quot;supercharge&quot;. Words that actual
-                    humans would write.
+                    Copy that speaks to your specific audience and their pain. Not &quot;revolutionize your workflow&quot; garbage.
                   </p>
                 </div>
               </div>
@@ -172,10 +165,10 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-medium text-white mb-1">
-                    Design you won&apos;t be ashamed of
+                    Look legitimate instantly
                   </h3>
                   <p className="text-zinc-500 text-sm">
-                    No AI slop. Clean templates that look like you hired someone.
+                    Clean design that makes visitors trust you before they even try your product.
                   </p>
                 </div>
               </div>
@@ -198,10 +191,10 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-medium text-white mb-1">
-                    Code you can actually use
+                    Skip the $500 copywriter
                   </h3>
                   <p className="text-zinc-500 text-sm">
-                    HTML + Tailwind. No dependencies. Works everywhere.
+                    Test different angles in minutes. Iterate fast without waiting days for revisions.
                   </p>
                 </div>
               </div>
@@ -210,18 +203,18 @@ export default function Home() {
         </section>
 
         {/* CTA */}
-        <section className="text-center animate-fade-in-delay-3">
-          <h2 className="font-display text-3xl font-bold text-white mb-4">
-            Stop wasting time on CSS
-          </h2>
-          <p className="text-zinc-500 mb-8">
-            Get a landing page you&apos;re proud of in under 5 minutes.
+        <section className="text-center animate-fade-in-delay-4">
+          <p className="text-zinc-500 mb-3 text-sm">
+            Go from &quot;ignore the design&quot; to
           </p>
+          <h2 className="font-display text-3xl font-bold text-white mb-8">
+            &quot;Wait, you have a designer?&quot;
+          </h2>
           <Link
             href="/create"
             className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-zinc-900 font-semibold rounded-xl hover:bg-accent-hover transition-colors"
           >
-            Start Building
+            Create Your Landing Page
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -242,7 +235,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="mt-24 pt-8 border-t border-zinc-900 text-center">
           <p className="text-zinc-600 text-xs">
-            Built for founders who ship fast
+            Built for solo founders who ship
           </p>
         </footer>
       </div>
