@@ -113,8 +113,55 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Benefits */}
+        {/* Examples */}
         <section className="mb-20 animate-fade-in-delay-3">
+          <h2 className="text-xs font-medium text-zinc-600 uppercase tracking-widest text-center mb-10">
+            Example outputs
+          </h2>
+          <div className="space-y-4">
+            {/* Example 1 */}
+            <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-xs text-zinc-600 bg-zinc-800 px-2 py-1 rounded">Developer Tool</span>
+              </div>
+              <h3 className="font-display text-xl font-bold text-white mb-2">
+                Stop writing commit messages. Start shipping.
+              </h3>
+              <p className="text-zinc-400 text-sm">
+                AI that writes meaningful commit messages from your diffs. Because &quot;fix stuff&quot; isn&apos;t a commit message.
+              </p>
+            </div>
+
+            {/* Example 2 */}
+            <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-xs text-zinc-600 bg-zinc-800 px-2 py-1 rounded">SaaS</span>
+              </div>
+              <h3 className="font-display text-xl font-bold text-white mb-2">
+                Your invoices are costing you clients
+              </h3>
+              <p className="text-zinc-400 text-sm">
+                Professional invoices in 30 seconds. Get paid faster with payment links, automatic reminders, and branding that doesn&apos;t scream &quot;I use a free template.&quot;
+              </p>
+            </div>
+
+            {/* Example 3 */}
+            <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-xs text-zinc-600 bg-zinc-800 px-2 py-1 rounded">Side Project</span>
+              </div>
+              <h3 className="font-display text-xl font-bold text-white mb-2">
+                Track your habits without the guilt trips
+              </h3>
+              <p className="text-zinc-400 text-sm">
+                A habit tracker that celebrates streaks but doesn&apos;t shame you for missing a day. Built for humans, not robots.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits */}
+        <section className="mb-20 animate-fade-in-delay-4">
           <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 md:p-12">
             <h2 className="font-display text-2xl font-bold text-white mb-8">
               Why this works
@@ -203,7 +250,7 @@ export default function Home() {
         </section>
 
         {/* CTA */}
-        <section className="text-center animate-fade-in-delay-4">
+        <section className="text-center animate-fade-in-delay-5">
           <p className="text-zinc-500 mb-3 text-sm">
             Go from &quot;ignore the design&quot; to
           </p>
