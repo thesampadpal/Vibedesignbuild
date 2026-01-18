@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ExtractedProductData } from "@/lib/types";
+import { ExtractedProductData, Tone, TONE_LABELS } from "@/lib/types";
 import { trackEvent } from "@/components/providers/PostHogProvider";
 
 interface ExtractedContext {
@@ -51,6 +51,7 @@ export default function SimplifiedInput() {
   // Step 2 editable fields
   const [targetAudience, setTargetAudience] = useState("");
   const [keyBenefit, setKeyBenefit] = useState("");
+  const [tone, setTone] = useState<Tone>("professional");
 
   const handleStep1Submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -122,7 +123,7 @@ export default function SimplifiedInput() {
       differentiators: [],
       socialProof: null,
       pricing: null,
-      tone: "professional",
+      tone,
     };
 
     // Store in sessionStorage
@@ -133,6 +134,7 @@ export default function SimplifiedInput() {
       inputType,
       hasTargetAudience: !!targetAudience,
       hasKeyBenefit: !!keyBenefit,
+      tone,
     });
 
     // Redirect to preview
@@ -279,8 +281,30 @@ export default function SimplifiedInput() {
             />
           </div>
 
+          <div>
+            <label className="block text-sm font-medium text-zinc-400 mb-3">
+              Tone
+            </label>
+            <div className="flex flex-wrap gap-2">
+              {(Object.keys(TONE_LABELS) as Tone[]).map((t) => (
+                <button
+                  key={t}
+                  type="button"
+                  onClick={() => setTone(t)}
+                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+                    tone === t
+                      ? "bg-accent text-zinc-900"
+                      : "bg-zinc-900 text-zinc-400 border border-zinc-800 hover:border-zinc-700 hover:text-zinc-300"
+                  }`}
+                >
+                  {TONE_LABELS[t]}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <p className="text-xs text-zinc-500">
-            Leave blank and we&apos;ll figure it out. Fill in for better results.
+            Leave fields blank and we&apos;ll figure it out. Fill in for better results.
           </p>
 
           <div className="flex gap-3">
